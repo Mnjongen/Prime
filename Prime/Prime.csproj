@@ -32,6 +32,7 @@
 	<PropertyGroup>
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<PackageIcon>icon.png</PackageIcon>
+		<PackageId>Mnjongen.$(AssemblyName)</PackageId>
 
 		<!-- Optional: Detect breaking changes from a previous version -->
 		<!-- <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion> -->
