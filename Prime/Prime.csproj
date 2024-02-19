@@ -1,9 +1,66 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/Mnjongen/Prime</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectUrl>https://github.com/Mnjongen/Prime</PackageProjectUrl>
+		<Authors>Mnjongen</Authors>
+		<Title>Prime</Title>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Description>Prime is a simple .NET library that implements different prime number finding algorithms.</Description>
+		<Copyright>
+			This package is licensed under the MIT license. Full license can be found in the
+			source code.
+		</Copyright>
+		<PackageTags>library, prime, number, primenumber, algorithm, opensource, .net, c#, dotnet</PackageTags>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<PackageIcon>icon.png</PackageIcon>
+
+		<!-- Optional: Detect breaking changes from a previous version -->
+		<!-- <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion> -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="MinVer" Version="4.3.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>
